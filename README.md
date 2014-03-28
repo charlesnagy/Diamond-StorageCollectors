@@ -1,6 +1,8 @@
 Diamond-StorageCollectors
 =========================
 
+_Note_: **Directory structure has been updated to match the new version of diamond collector**
+
 Various storage related diamond collectors for graphite. 
 
 ## LvmCollector
@@ -12,7 +14,7 @@ Collects Lvm metrics in three set (pv, vg, lv). The format is .lvm.pv.[device].[
     
 ### Installation
 
-1. Move the LvmCollector directory or the LvmCollector.py file to you collectors directory which should exist on /usr/local/share/diamond/collectors or /usr/share/diamond/collectors path depending on your installation.
+1. Move the lvm directory to your collectors directory which should exist on /usr/local/share/diamond/collectors or /usr/share/diamond/collectors path depending on your installation.
 1. Setup the LvmCollector.conf in your diamond collectors config directory (/etc/diamond/collectors)
 
 	    $ cat /etc/diamond/collectors/LvmCollector.conf
@@ -44,3 +46,28 @@ Default config for the collector:
 			'lv': 'lvs',
 		}
 	}
+
+## FlashcacheCollector
+---
+
+This creates metric in the format of:
+
+	flashcache.<cache_name>.[metric]
+
+### Installation 
+
+1. Move the flashcache directory to your collectors directory which should exist on /usr/local/share/diamond/collectors or /usr/share/diamond/collectors path depending on your installation.
+
+### Configuration
+
+Default config for the collector:
+
+	{
+		'path': 'flashcache',
+	}
+
+
+
+You can find me on [Twitter](https://twitter.com/charlesnagy "Charlesnagy Twitter"), [My Blog](http://charlesnagy.info/ "Charlesnagy.info") or [LinkedIn](http://www.linkedin.com/in/nkaroly "KÃ¡roly Nagy - MySQL DBA")
+
+
